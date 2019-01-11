@@ -14,8 +14,17 @@ public class PlayerMovement : MonoBehaviour
     private float turnAroundMult;
 
     private Rigidbody2D rigidBoi;
-    
-	void Start ()
+
+    private Direction currentDirection;
+    public enum Direction
+    {
+        Right,
+        Up,
+        Left,
+        Down
+    }
+
+    void Start ()
     {
         rigidBoi = GetComponent<Rigidbody2D>();
 	}
