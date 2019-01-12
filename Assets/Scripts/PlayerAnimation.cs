@@ -54,7 +54,7 @@ public class PlayerAnimation : MonoBehaviour
             }
 
             transform.localScale = new Vector3(
-                Mathf.Abs(transform.localScale.x) * (currentDirection == PlayerMovement.Direction.Left ? -1f : 1f),
+                Mathf.Abs(transform.localScale.x) * (currentDirection == PlayerMovement.Direction.Right ? -1f : 1f),
                 transform.localScale.y,
                 transform.localScale.z);
 

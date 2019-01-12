@@ -8,6 +8,21 @@ TextureImporter:
     21300006: YoumuWalkSheet_3
     21300008: YoumuWalkSheet_4
     21300010: YoumuWalkSheet_5
+    21300012: YoumuWalkSheet_6
+    21300014: YoumuWalkSheet_7
+    21300016: YoumuWalkSheet_8
+    21300018: YoumuWalkSheet_9
+    21300020: YoumuWalkSheet_10
+    21300022: YoumuWalkSheet_11
+    21300024: YoumuWalkSheet_12
+    21300026: YoumuWalkSheet_13
+    21300028: YoumuWalkSheet_14
+    21300030: YoumuWalkSheet_15
+    21300032: YoumuWalkSheet_16
+    21300034: YoumuWalkSheet_17
+    21300036: YoumuWalkSheet_18
+    21300038: YoumuWalkSheet_19
+    21300040: YoumuWalkSheet_20
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -114,9 +129,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 209
-        height: 279
+        y: 600
+        width: 225
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +139,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 465ed0c58b273b549bdd3670dd720462
+      spriteID: 10a3af8f0bba6be4ca478d2797321d27
       vertices: []
       indices: 
       edges: []
@@ -133,10 +148,10 @@ TextureImporter:
       name: YoumuWalkSheet_1
       rect:
         serializedVersion: 2
-        x: 209
-        y: 0
-        width: 209
-        height: 279
+        x: 225
+        y: 600
+        width: 225
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,7 +159,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b4cc331bb9de6e439c29f4525ce2f50
+      spriteID: 5d428f6a452c4ff4c960ba0a576b7ab0
       vertices: []
       indices: 
       edges: []
@@ -153,10 +168,10 @@ TextureImporter:
       name: YoumuWalkSheet_2
       rect:
         serializedVersion: 2
-        x: 418
-        y: 0
-        width: 209
-        height: 279
+        x: 450
+        y: 600
+        width: 225
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,7 +179,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d78318aabb0dc194eaf9805eff6918d8
+      spriteID: 2b4d2e299ad4e44458fb62acd79b666d
       vertices: []
       indices: 
       edges: []
@@ -173,10 +188,10 @@ TextureImporter:
       name: YoumuWalkSheet_3
       rect:
         serializedVersion: 2
-        x: 627
-        y: 0
-        width: 209
-        height: 279
+        x: 675
+        y: 600
+        width: 225
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,7 +199,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba3e8716f5e4f1347929c4c76160bb1d
+      spriteID: 950eea0e5abebfa4e9b2b0e4ff969a50
       vertices: []
       indices: 
       edges: []
@@ -193,10 +208,10 @@ TextureImporter:
       name: YoumuWalkSheet_4
       rect:
         serializedVersion: 2
-        x: 836
-        y: 0
-        width: 209
-        height: 279
+        x: 900
+        y: 600
+        width: 225
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dab6331c991db224e92abbc37b141356
+      spriteID: b0d8a4545a1280d41b4d9db18b510697
       vertices: []
       indices: 
       edges: []
@@ -213,10 +228,10 @@ TextureImporter:
       name: YoumuWalkSheet_5
       rect:
         serializedVersion: 2
-        x: 1045
-        y: 0
-        width: 209
-        height: 279
+        x: 1125
+        y: 600
+        width: 225
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,7 +239,307 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc9550ee873f24646ab47a0f473220e3
+      spriteID: cf00172b1a8f34a479f91fafee0c00b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 600
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08daec12009a384c83d9abe93593851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d86ccea69257d4888b7f0cc1e23ae1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_8
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 300
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e795f589b139ac54ea41c67fe6e7ea53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 300
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad07ad8c764d224fb92bba011710d35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_10
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 300
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39825e10f0c3bf49a4f844cec576ef1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_11
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 300
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b3b15f6dcc4044d842163627e2f8f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 300
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1330919128fa9643a16776bb28e69df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 300
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade15aadd3e0daf4fa572420cbd39da8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99552f331382ad042bd4863ee1695e0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2706e374c36b55241b1ab7849dc390c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_16
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9af52b1a294f0e4d83d8887d30b93da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_17
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 0
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d120834b1b265794283c019e9971c50a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_18
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbca7a7e7b119e45b7e9cc7ee9e6fc8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 0
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e957796c19aa74db45dfbbc7783b76
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YoumuWalkSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 0
+        width: 225
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f1500d89e819a4ea36f583cc594a27
       vertices: []
       indices: 
       edges: []
