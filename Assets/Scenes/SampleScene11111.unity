@@ -249,6 +249,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487086726}
+--- !u!4 &693872293 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4644327148522104, guid: 3fb93b0940e58ad479a9019d66306ef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 2044820509}
 --- !u!1001 &1063309377
 Prefab:
   m_ObjectHideFlags: 0
@@ -9872,7 +9877,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9895,11 +9900,39 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1463990291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.68, z: -10}
+  m_LocalPosition: {x: -0.35540804, y: 0.51, z: -9.971772}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 693872293}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1693039333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1693039334}
+  m_Layer: 0
+  m_Name: SpookyEntity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1693039334
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1693039333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1797173364 stripped
 RectTransform:
@@ -9950,7 +9983,7 @@ MonoBehaviour:
     type: 2}
   EndStairPrefab: {fileID: 1786360136567726, guid: ad63154709c1d204687bb1ada4c52d7e,
     type: 2}
-  Speed: 1
+  Speed: 4
   PoolSize: 5
 --- !u!1 &1904814503
 GameObject:
@@ -10115,7 +10148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4644327148522104, guid: 3fb93b0940e58ad479a9019d66306ef6, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb93b0940e58ad479a9019d66306ef6, type: 2}
