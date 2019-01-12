@@ -5,8 +5,7 @@ using UnityEngine;
 public class PointFollow : MonoBehaviour
 {
     public float Force = 50f;
-    public float MagnitudeThreshold = 0.5f;
-    public bool IsFollowing { get; set; }
+    public bool IsFollowing = true;
     public Provider<Vector2> ProvideTarget { get; set; }
 
     private Rigidbody2D rigidBody;
@@ -20,9 +19,15 @@ public class PointFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        var target = ProvideTarget();
+        if (!IsFollowing || ProvideTarget == null)
+            return;
+        var target = -rigidBody.position + ProvideTarget();
+        var magnitude = target.magnitude;
+        var magnitudeThreshold = Force * 0.1f;
 
-        if (target.magnitude > MagnitudeThreshold)
+        if (magnitude > magnitudeThreshold)
             rigidBody.AddForce(Force * target.normalized, ForceMode2D.Force);
+        else if (target.magnitude > 0.01f)
+            rigidBody.AddForce((magnitude / magnitudeThreshold) * Force * target.normalized, ForceMode2D.Force);
     }
 }

@@ -1,16 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FollowerEnemy : MonoBehaviour {
+[RequireComponent(typeof(PointFollow))]
+public class FollowerEnemy : MonoBehaviour
+{
+    public enum State { ACTIVE, IDLE }
+    private State _currentState = State.IDLE;
+    public State CurrentState
+    {
+        get { return _currentState; }
+        set
+        {
+            if (value == _currentState)
+                return;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+            _currentState = value;
+            if (_currentState == State.ACTIVE)
+            {
+                pointFollow.IsFollowing = true;
+            }
+            else
+            {
+                pointFollow.IsFollowing = false;
+            }
+        }
+    }
+
+    private PointFollow pointFollow;
+    private PlayerMovement playerMovement;
+
+    // Use this for initialization
+    void Start()
+    {
+        pointFollow = GetComponent<PointFollow>();
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
+        pointFollow.ProvideTarget = () => playerMovement.transform.position;
+        CurrentState = State.IDLE;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

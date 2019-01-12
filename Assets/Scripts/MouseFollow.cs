@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MouseFollow : MonoBehaviour
 {
-    [SerializeField]
-    public float Speed = 1f;
-
     private Rigidbody2D rigidBody;
     private PointFollow pointFollow;
 
@@ -14,10 +11,7 @@ public class MouseFollow : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        pointFollow.ProvideTarget = () =>
-        {
-            var cam = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            return new Vector2(cam.x, cam.y) - rigidBody.position;
-        };
+        pointFollow = GetComponent<PointFollow>();
+        pointFollow.ProvideTarget = () => Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 }
