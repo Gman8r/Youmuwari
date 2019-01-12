@@ -10,6 +10,16 @@ public class PlayerAnimation : MonoBehaviour
     private SpriteList[] movementSprites;
     [SerializeField]
     private Sprite[] idleSprites;
+    [SerializeField]
+    private SpritePriority diagonalPriority;
+
+    private enum SpritePriority
+    {
+        Last,
+        Vertical,
+        Horizontal
+    }
+
 
     SpriteRenderer spriteRenderer;
     PlayerMovement.Direction currentDirection;
@@ -46,7 +56,10 @@ public class PlayerAnimation : MonoBehaviour
             if (calculationAngle % 90f == 0f   // If right on the cusp of two directions, keep current direction
                 && Mathf.Abs(Mathf.DeltaAngle(movementAngle, (float)currentDirection * 90f)) <= 91f) // Unless we've turned too much
             {
-                // Empty bc i dont want to negate that expression
+                if (diagonalPriority == SpritePriority.Vertical)
+                    currentDirection = movementAngle < 180f ? PlayerMovement.Direction.Up : PlayerMovement.Direction.Down;
+                else if (diagonalPriority == SpritePriority.Horizontal)
+                    currentDirection = (movementAngle > 90f && movementAngle < 270f) ? PlayerMovement.Direction.Up : PlayerMovement.Direction.Down;
             }
             else
             {
@@ -54,7 +67,7 @@ public class PlayerAnimation : MonoBehaviour
             }
 
             transform.localScale = new Vector3(
-                Mathf.Abs(transform.localScale.x) * (currentDirection == PlayerMovement.Direction.Left ? -1f : 1f),
+                Mathf.Abs(transform.localScale.x) * (currentDirection == PlayerMovement.Direction.Right ? -1f : 1f),
                 transform.localScale.y,
                 transform.localScale.z);
 
