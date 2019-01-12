@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 4291965429
+    locked: 0
+  - name: Terrain
+    uniqueID: 1799046893
+    locked: 0
+  - name: Light
+    uniqueID: 2809741143
+    locked: 0
+  - name: Special
+    uniqueID: 4262590687
+    locked: 0

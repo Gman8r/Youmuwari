@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    public bool movementLocked = true;
+
     [SerializeField]
     private float frameSpeed;
     [SerializeField]
@@ -34,20 +36,20 @@ public class PlayerAnimation : MonoBehaviour
         public Sprite[] GetSprites() { return sprites; }
     }
 
-	void Start ()
+    void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        currentDirection = PlayerMovement.Direction.Down;
-        moving = false;
-	}
-	
-	void Update ()
+        currentDirection = PlayerMovement.Direction.Up;
+        moving = true;
+    }
+
+    void Update()
     {
         var xInput = Input.GetAxisRaw("Horizontal");
         var yInput = Input.GetAxisRaw("Vertical");
 
         moving = xInput != 0f || yInput != 0f;
-        if (moving)
+        if (movementLocked || moving)
         {
             var inputVector = new Vector2(xInput, yInput);
             var movementAngle = MathHelper.trueMod(inputVector.getAngle(), 360f);
@@ -70,6 +72,12 @@ public class PlayerAnimation : MonoBehaviour
                 Mathf.Abs(transform.localScale.x) * (currentDirection == PlayerMovement.Direction.Right ? -1f : 1f),
                 transform.localScale.y,
                 transform.localScale.z);
+
+            if (movementLocked)
+            {
+                moving = true;
+                currentDirection = PlayerMovement.Direction.Up;
+            }
 
             var spriteSet = movementSprites[(int)currentDirection].GetSprites();
             frameIndex += frameSpeed * Time.deltaTime;

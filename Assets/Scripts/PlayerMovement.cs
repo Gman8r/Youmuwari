@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidBoi;
 
     private Direction currentDirection;
+    public bool movementLocked = true;
+
     public enum Direction
     {
         Right,
@@ -24,18 +26,19 @@ public class PlayerMovement : MonoBehaviour
         Down
     }
 
-    void Start ()
+    void Start()
     {
         rigidBoi = GetComponent<Rigidbody2D>();
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
         UpdateMovement();
-	}
+    }
 
     void UpdateMovement()
     {
+        if (movementLocked) return;
         var xInput = Input.GetAxisRaw("Horizontal");
         var yInput = Input.GetAxisRaw("Vertical");
 

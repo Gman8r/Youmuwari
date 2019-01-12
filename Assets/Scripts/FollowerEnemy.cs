@@ -25,7 +25,7 @@ public class FollowerEnemy : MonoBehaviour
         }
     }
 
-    private PointFollow pointFollow;
+    public PointFollow pointFollow;
     private PlayerMovement playerMovement;
 
     // Use this for initialization
@@ -42,5 +42,12 @@ public class FollowerEnemy : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void RespawnAt(Vector3 position)
+    {
+        //PlayAnim
+        //teleport
+        //Play again
     }
 }

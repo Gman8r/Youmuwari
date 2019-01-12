@@ -23,6 +23,6 @@ public class Flashlight : MonoBehaviour
     {
         if (locationQueue.Count >= tickDelay && locationQueue.Count > 0)
             transform.position = locationQueue.Dequeue();
-        locationQueue.Enqueue(ProvidePosition());
+        locationQueue.Enqueue(mainCam.ScreenToWorldPoint(Input.mousePosition));
     }
 }
