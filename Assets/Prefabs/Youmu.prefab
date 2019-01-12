@@ -187,6 +187,7 @@ MonoBehaviour:
   - {fileID: 21300014, guid: dc97c2e8d27a8f143b5062a003e2da31, type: 3}
   - {fileID: 21300028, guid: dc97c2e8d27a8f143b5062a003e2da31, type: 3}
   - {fileID: 21300000, guid: dc97c2e8d27a8f143b5062a003e2da31, type: 3}
+  diagonalPriority: 0
 --- !u!114 &114491563622587610
 MonoBehaviour:
   m_ObjectHideFlags: 1
