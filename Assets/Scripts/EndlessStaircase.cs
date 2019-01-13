@@ -65,7 +65,7 @@ public class EndlessStaircase : MonoBehaviour
                         item.Dispose();
                         stopped = true;
                         var go = Instantiate(EndStairPrefab, transform);
-                        go.transform.localPosition += new Vector3(0, offsetYTop - 2 * frameOvertravel, 0);
+                        go.transform.localPosition += new Vector3(0, offsetYTop - Speed * Time.deltaTime - frameOvertravel, 0);
                     }
                 }
                 item.Move(Speed);

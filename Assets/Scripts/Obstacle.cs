@@ -15,13 +15,13 @@ public class Obstacle : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Open()
+    public void Open()
     {
         coll.isTrigger = true;
         animator.SetTrigger("lulw");
     }
 
-    void Close()
+    public void Close()
     {
         coll.isTrigger = false;
         animator.SetTrigger("lulw");

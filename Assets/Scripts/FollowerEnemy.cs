@@ -3,27 +3,10 @@
 [RequireComponent(typeof(PointFollow))]
 public class FollowerEnemy : MonoBehaviour
 {
-    public enum State { ACTIVE, IDLE }
-    private State _currentState = State.IDLE;
-    public State CurrentState
-    {
-        get { return _currentState; }
-        set
-        {
-            if (value == _currentState)
-                return;
+    public enum State { PLAYER, IDLE, CAKE }
+    public State CurrentState = State.IDLE;
 
-            _currentState = value;
-            if (_currentState == State.ACTIVE)
-            {
-                pointFollow.IsFollowing = true;
-            }
-            else
-            {
-                pointFollow.IsFollowing = false;
-            }
-        }
-    }
+    public GameObject cake;
 
     public PointFollow pointFollow;
     private PlayerMovement playerMovement;
@@ -38,13 +21,33 @@ public class FollowerEnemy : MonoBehaviour
         CurrentState = State.IDLE;
     }
 
+    public void ResetState(State state)
+    {
+        if (CurrentState == state) return;
+
+        CurrentState = state;
+        if (CurrentState == State.IDLE)
+        {
+            pointFollow.ProvideTarget = null;
+        }
+        else if (CurrentState == State.PLAYER)
+        {
+            pointFollow.ProvideTarget = () => playerMovement.transform.position;
+        }
+        else if (CurrentState == State.CAKE)
+        {
+            if (cake == null) return;
+            pointFollow.ProvideTarget = () => cake.transform.position;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
 
     }
 
-    void RespawnAt(Vector3 position)
+    void EatCake()
     {
         //PlayAnim
         //teleport

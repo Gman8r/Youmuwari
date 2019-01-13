@@ -5,11 +5,19 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
+    public float cakePrefDist = 2f;
+    public float cakeDevourDist = 0.2f;
+    public float yuyuAggroDist = 3f;
+    public float yuyuDeathDist = 0.2f;
+
     FollowerEnemy yuyu;
     PlayerMovement playerMovement;
 
     Obstacle entryObs;
     Obstacle exitObs;
+
+    //Nullable
+    GameObject cake;
 
     [SerializeField]
     public GameObject cakePrefab;
@@ -18,7 +26,6 @@ public class LevelController : MonoBehaviour
     {
         CloseDoors();
         ActivateYuyu();
-        SpawnCake();
     }
 
     // Use this for initialization
@@ -34,7 +41,44 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var yuyuToPlayerDist = (playerMovement.transform.position - yuyu.transform.position).magnitude;
+        var yuyuToCakeDist = 100000f;
+        if (cake != null)
+            yuyuToCakeDist = (cake.transform.position - yuyu.transform.position).magnitude;
 
+        if (yuyu.CurrentState == FollowerEnemy.State.IDLE)
+        {
+            //Yu is aggroed
+            if (yuyuToPlayerDist < yuyuAggroDist)
+            {
+                yuyu.ResetState(FollowerEnemy.State.PLAYER);
+                SpawnCake();
+
+            }
+        }
+        else if (yuyu.CurrentState == FollowerEnemy.State.CAKE)
+        {
+            //Yu can eat
+            if (yuyuToCakeDist < cakeDevourDist)
+            {
+                Debug.Log("NOMNO");
+                exitObs.Open();
+            }
+        }
+        else if (yuyu.CurrentState == FollowerEnemy.State.PLAYER)
+        {
+            //Yu prefers the cake
+            if (yuyuToCakeDist < cakePrefDist)
+            {
+                yuyu.ResetState(FollowerEnemy.State.CAKE);
+                return;
+            }
+            //Rip
+            if (yuyuToPlayerDist < yuyuDeathDist)
+            {
+                Debug.Log("DETH");
+            }
+        }
     }
 
     void CloseDoors()
@@ -55,8 +99,11 @@ public class LevelController : MonoBehaviour
 
     void SpawnCake()
     {
-        var position = GameObject.Find("CakePositions");
-        var go = Instantiate(cakePrefab, transform);
+        var go1 = GameObject.Find("CakePositions");
+        var selectedIdx = UnityEngine.Random.Range(0, transform.childCount);
+        var pos = transform.GetChild(selectedIdx).position;
 
+        cake = Instantiate(cakePrefab, transform);
+        cake.transform.position = pos;
     }
 }
