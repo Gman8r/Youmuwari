@@ -17,7 +17,7 @@ public class FollowerEnemy : MonoBehaviour
     void Start()
     {
         pointFollow = GetComponent<PointFollow>();
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerMovement = GameObject.Find("Youmu").GetComponent<PlayerMovement>();
         fadeAnimator = GetComponent<Animator>();
         animator = transform.Find("Rig").GetComponent<Animator>();
 

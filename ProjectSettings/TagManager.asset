@@ -59,3 +59,6 @@ TagManager:
   - name: Special
     uniqueID: 4262590687
     locked: 0
+  - name: VerySpecial
+    uniqueID: 4042917401
+    locked: 0

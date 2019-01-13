@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     LevelController prevLevelController;
     LevelController currentLevelController;
 
+    public bool globalWinState = false;
+
     public int currentLevel = 1;
     int levelCount = 1;
 
@@ -25,7 +27,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (globalWinState)
+        {
+            if (Input.GetMouseButtonDown(0))
+                GameObject.Find("WinArt").GetComponent<Animator>().SetBool("visible", false);
+        }
     }
 
     public String levelPrefixOf(int i)
@@ -42,8 +48,24 @@ public class GameController : MonoBehaviour
     {
         currentLevel++;
         if (currentLevel > levelCount)
-            Debug.Log("Gameover");
+        {
+            globalWinState = true;
+            GameObject.Find("WinArt").GetComponent<Animator>().SetBool("visible", true);
+            return;
+        }
         currentLevelController = transform.Find(levelPrefixOf(currentLevel)).GetComponent<LevelController>();
         StartTriggered();
+    }
+
+    public void OnRetry()
+    {
+        currentLevelController.Reset();
+        LockUnlockPlayer(false);
+    }
+    public static void LockUnlockPlayer(bool locked)
+    {
+        var go = GameObject.Find("Youmu");
+        go.GetComponentInChildren<PlayerAnimation>().movementLocked = locked;
+        go.GetComponentInChildren<PlayerMovement>().movementLocked = locked;
     }
 }

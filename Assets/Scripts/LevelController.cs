@@ -20,6 +20,11 @@ public class LevelController : MonoBehaviour
     Obstacle entryObs;
     Obstacle exitObs;
 
+    [SerializeField]
+    GameObject entryObsg;
+    [SerializeField]
+    GameObject exitObsg;
+
     //Nullable
     GameObject cake;
 
@@ -30,6 +35,11 @@ public class LevelController : MonoBehaviour
 
     AudioSource titleMusic;
     AudioSource gameMusic;
+
+    Vector3 yuPos;
+    Vector3 plPos;
+    [SerializeField]
+    GameObject yuyuPref;
 
     void StartLevel()
     {
@@ -43,11 +53,14 @@ public class LevelController : MonoBehaviour
         playerMovement = GameObject.Find("Youmu").GetComponentInChildren<PlayerMovement>();
         gameController = GameObject.Find("Levels").GetComponent<GameController>();
 
-        entryObs = transform.Find("Entry").gameObject.GetComponent<Obstacle>();
-        exitObs = transform.Find("Exit").gameObject.GetComponent<Obstacle>();
+        entryObs = entryObsg.GetComponent<Obstacle>();
+        exitObs = exitObsg.GetComponent<Obstacle>();
 
         titleMusic = GameObject.Find("TitleMusic").GetComponent<AudioSource>();
         gameMusic = GameObject.Find("GameMusic").GetComponent<AudioSource>();
+
+        yuPos = yuyu.transform.position;
+        plPos = transform.Find("PlayerSpawn").position;
     }
 
     // Update is called once per frame
@@ -55,6 +68,7 @@ public class LevelController : MonoBehaviour
     {
         if (!started) return;
         if (won || lost) return;
+
 
         var yuyuToPlayerDist = (playerMovement.transform.position - yuyu.transform.position).magnitude;
         var yuyuToCakeDist = 100000f;
@@ -68,7 +82,7 @@ public class LevelController : MonoBehaviour
             {
                 if (!switchedMusic)
                 {
-                    yuyu.GetComponent<AudioSource>().Play();
+
                     if (gameController.currentLevel == 1)
                     {
                         switchedMusic = true;
@@ -76,6 +90,9 @@ public class LevelController : MonoBehaviour
                         playGameMusic();
                     }
                 }
+                if (yuyu.CurrentState == FollowerEnemy.State.IDLE)
+                    yuyu.GetComponent<AudioSource>().Play();
+
                 yuyu.ResetState(FollowerEnemy.State.PLAYER);
                 SpawnCake();
                 CloseDoors();
@@ -84,23 +101,24 @@ public class LevelController : MonoBehaviour
         else if (yuyu.CurrentState == FollowerEnemy.State.CAKE)
         {
             //Yu can eat
-            if (yuyuToCakeDist < cakeDevourDist)
+            if (!won && yuyuToCakeDist < cakeDevourDist)
             {
+                GameObject.Find("DevourSound").GetComponent<AudioSource>().Play();
                 won = true;
-                Debug.Log("NOMNO");
                 exitObs.Open();
-                yuyu.animator.SetTrigger("reverse");
-                GameObject.Destroy(yuyu.gameObject, 4f);
+                GameObject.Destroy(yuyu.gameObject, 2f);
                 cake.GetComponent<Cake>().fadeAnimator.SetTrigger("lulw");
-                GameObject.Destroy(cake.gameObject, 4f);
+                GameObject.Destroy(cake.gameObject, 2f);
                 gameController.CompleteLevel();
             }
         }
         else if (yuyu.CurrentState == FollowerEnemy.State.PLAYER)
         {
+            Debug.Log(yuyuToPlayerDist);
             //Yu prefers the cake
             if (yuyuToCakeDist < cakePrefDist)
             {
+                GameObject.Find("HealSound").GetComponent<AudioSource>().Play();
                 yuyu.ResetState(FollowerEnemy.State.CAKE);
                 return;
             }
@@ -108,7 +126,10 @@ public class LevelController : MonoBehaviour
             if (yuyuToPlayerDist < yuyuDeathDist)
             {
                 lost = true;
-                Debug.Log("DETH");
+                GameObject.Find("DevourSound").GetComponent<AudioSource>().Play();
+                GameController.LockUnlockPlayer(true);
+                //Al dente spaghetti
+                GameObject.Find("Canvas").GetComponent<MainMenuController>().OnLoss();
             }
         }
     }
@@ -121,7 +142,8 @@ public class LevelController : MonoBehaviour
 
     void OpenDoors()
     {
-
+        entryObs.Open();
+        exitObs.Open();
     }
 
     void SpawnCake()
@@ -156,5 +178,26 @@ public class LevelController : MonoBehaviour
 
         a.Stop();
         a.volume = startVolume;
+    }
+
+    public void Reset()
+    {
+        won = false;
+        lost = false;
+        started = true;
+
+        playerMovement.gameObject.transform.position = plPos;
+
+        Debug.Log(plPos);
+
+        if (yuyu != null)
+            Destroy(yuyu.gameObject);
+        if (cake != null)
+            Destroy(cake.gameObject);
+        var go = Instantiate(yuyuPref, yuPos, Quaternion.identity, transform);
+        yuyu = go.GetComponent<FollowerEnemy>();
+        go.name = "Yuyuko";
+
+        OpenDoors();
     }
 }
