@@ -44,8 +44,14 @@ TagManager:
   - name: Floor
     uniqueID: 4291965429
     locked: 0
+  - name: LowerTerrain
+    uniqueID: 3658577659
+    locked: 0
   - name: Terrain
     uniqueID: 1799046893
+    locked: 0
+  - name: UpperTerrain
+    uniqueID: 4099436871
     locked: 0
   - name: Light
     uniqueID: 2809741143

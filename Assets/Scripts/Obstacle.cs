@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-
+    SpriteRenderer spriteRenderer;
     Collider2D coll;
-    Animator animator;
 
     // Use this for initialization
     void Start()
     {
         coll = GetComponent<Collider2D>();
-        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        Open();
     }
 
     public void Open()
     {
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
         coll.isTrigger = true;
-        animator.SetTrigger("lulw");
     }
 
     public void Close()
     {
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
         coll.isTrigger = false;
-        animator.SetTrigger("lulw");
     }
 }

@@ -15,6 +15,5 @@ public class YSorter : MonoBehaviour
     void Update()
     {
         sprite.sortingOrder = -(int)Math.Round(transform.position.y * 10);
-        Debug.Log(-(int)Math.Round(transform.position.y * 10));
     }
 }

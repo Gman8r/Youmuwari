@@ -66,6 +66,8 @@ public class EndlessStaircase : MonoBehaviour
                         stopped = true;
                         var go = Instantiate(EndStairPrefab, transform);
                         go.transform.localPosition += new Vector3(0, offsetYTop - Speed * Time.deltaTime - frameOvertravel, 0);
+                        GameObject.Find("Youmu").GetComponentInChildren<PlayerAnimation>().movementLocked = false;
+                        GameObject.Find("Youmu").GetComponentInChildren<PlayerMovement>().movementLocked = false;
                     }
                 }
                 item.Move(Speed);

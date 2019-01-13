@@ -10,14 +10,17 @@ public class FollowerEnemy : MonoBehaviour
 
     public PointFollow pointFollow;
     private PlayerMovement playerMovement;
+    public Animator animator;
+    public Animator fadeAnimator;
 
     // Use this for initialization
     void Start()
     {
         pointFollow = GetComponent<PointFollow>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        fadeAnimator = GetComponent<Animator>();
+        animator = transform.Find("Rig").GetComponent<Animator>();
 
-        pointFollow.ProvideTarget = () => playerMovement.transform.position;
         CurrentState = State.IDLE;
     }
 
@@ -32,6 +35,7 @@ public class FollowerEnemy : MonoBehaviour
         }
         else if (CurrentState == State.PLAYER)
         {
+            animator.SetTrigger("lulw");
             pointFollow.ProvideTarget = () => playerMovement.transform.position;
         }
         else if (CurrentState == State.CAKE)
@@ -46,6 +50,8 @@ public class FollowerEnemy : MonoBehaviour
     {
 
     }
+
+
 
     void EatCake()
     {

@@ -10,8 +10,6 @@ public class MainMenuController : MonoBehaviour
            {
                GetComponent<Animator>().SetBool("uiControlsVisible", false);
                GameObject.Find("EndlessStaircase").GetComponent<EndlessStaircase>().Stop();
-               GameObject.Find("Youmu").GetComponentInChildren<PlayerAnimation>().movementLocked = false;
-               GameObject.Find("Youmu").GetComponentInChildren<PlayerMovement>().movementLocked = false;
                GameObject.Find("Ghost").GetComponentInChildren<MouseFollow>().Enable();
            });
         GameObject.Find("QuitButton").GetComponentInChildren<Button>().onClick.AddListener(

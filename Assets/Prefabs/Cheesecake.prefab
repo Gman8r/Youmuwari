@@ -9,32 +9,32 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1205648755881802}
+  m_RootGameObject: {fileID: 1499616762028136}
   m_IsPrefabParent: 1
---- !u!1 &1205648755881802
+--- !u!1 &1499616762028136
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4734445150408464}
-  - component: {fileID: 212238765009468012}
-  - component: {fileID: 114607823592249428}
-  - component: {fileID: 95059180529067064}
+  - component: {fileID: 4953353889277388}
+  - component: {fileID: 212227341698867002}
+  - component: {fileID: 114746130292833070}
+  - component: {fileID: 95231360357412278}
   m_Layer: 0
-  m_Name: Cake
+  m_Name: Cheesecake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4734445150408464
+--- !u!4 &4953353889277388
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1205648755881802}
+  m_GameObject: {fileID: 1499616762028136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 19.39, z: 2.0228207}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,13 +42,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95059180529067064
+--- !u!95 &95231360357412278
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1205648755881802}
+  m_GameObject: {fileID: 1499616762028136}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f251a277cd20f5e40b5db2d103e91b63, type: 2}
@@ -60,24 +60,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114607823592249428
+--- !u!114 &114746130292833070
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1205648755881802}
+  m_GameObject: {fileID: 1499616762028136}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdab53d497edc5a489aca83a33a27b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAnimator: {fileID: 0}
---- !u!212 &212238765009468012
+--- !u!212 &212227341698867002
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1205648755881802}
+  m_GameObject: {fileID: 1499616762028136}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -104,8 +104,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -636389637
-  m_SortingLayer: 2
+  m_SortingLayerID: -32376609
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4cf7ba2bfed52f148b076a4ef86f9c6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

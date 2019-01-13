@@ -13,6 +13,7 @@ public class StartTrigger : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Youmu");
+        gameController = GameObject.Find("Levels").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class StartTrigger : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Collision");
         if (!fired && collision.gameObject == player)

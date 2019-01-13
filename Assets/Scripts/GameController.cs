@@ -5,11 +5,21 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    LevelController levelController;
+    [SerializeField]
+    GameObject Levels;
+
+    LevelController prevLevelController;
+    LevelController currentLevelController;
+
+    public int currentLevel = 1;
+    int levelCount = 1;
+
     // Use this for initialization
     void Start()
     {
-        levelController = transform.Find(levelPrefixOf(1)).GetComponent<LevelController>();
+        currentLevelController = transform.Find(levelPrefixOf(currentLevel)).GetComponent<LevelController>();
+        StartTriggered();
+        levelCount = transform.childCount;
     }
 
     // Update is called once per frame
@@ -25,6 +35,15 @@ public class GameController : MonoBehaviour
 
     public void StartTriggered()
     {
-        throw new NotImplementedException();
+        currentLevelController.started = true;
+    }
+
+    public void CompleteLevel()
+    {
+        currentLevel++;
+        if (currentLevel > levelCount)
+            Debug.Log("Gameover");
+        currentLevelController = transform.Find(levelPrefixOf(currentLevel)).GetComponent<LevelController>();
+        StartTriggered();
     }
 }
