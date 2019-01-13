@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    public float cakePrefDist = 2f;
+    public float cakePrefDist = 1.2f;
     public float cakeDevourDist = 0.2f;
-    public float yuyuAggroDist = 3f;
+    public float yuyuAggroDist = 4f;
     public float yuyuDeathDist = 0.2f;
 
     public bool won;
@@ -69,6 +69,8 @@ public class LevelController : MonoBehaviour
         if (!started) return;
         if (won || lost) return;
 
+        Debug.Log(yuyuAggroDist);
+        yuyuAggroDist += 0.04f * Time.deltaTime;
 
         var yuyuToPlayerDist = (playerMovement.transform.position - yuyu.transform.position).magnitude;
         var yuyuToCakeDist = 100000f;

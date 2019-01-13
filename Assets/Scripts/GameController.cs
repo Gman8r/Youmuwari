@@ -13,13 +13,13 @@ public class GameController : MonoBehaviour
 
     public bool globalWinState = false;
 
-    public int currentLevel = 1;
+    public int currentLevel = 0;
     int levelCount = 1;
 
     // Use this for initialization
     void Start()
     {
-        currentLevelController = transform.Find(levelPrefixOf(currentLevel)).GetComponent<LevelController>();
+        currentLevelController = transform.GetChild(transform.childCount - 1 - currentLevel).GetComponent<LevelController>();
         StartTriggered();
         levelCount = transform.childCount;
     }
